@@ -14,7 +14,7 @@ async function startServer() {
   const app = express()
 
   if (!isProd) {
-    // ✅ Development mode: use Vite with HMR
+    // Development mode: use Vite with HMR
     const vite = await createViteServer({
       server: { middlewareMode: 'ssr' },
       appType: 'custom',
@@ -22,7 +22,7 @@ async function startServer() {
 
     app.use(vite.middlewares)
 
-    app.use('/', async (req, res) => {
+    app.use(/.*/, async (req, res) => {
       try {
 
         const url = req.originalUrl
@@ -49,7 +49,7 @@ async function startServer() {
       }
     })
   } else {
-    // ✅ Production mode: serve built assets
+    // Production mode: serve built assets
     app.use(express.static(path.resolve(__dirname, '../dist/client')))
 
     const template = fs.readFileSync(
@@ -58,7 +58,7 @@ async function startServer() {
     )
     const { createApp } = await import('../dist/server/main.server.js')
 
-    app.use('*', async (req, res) => {
+    app.use(/.*/, async (req, res) => {
       try {
         const { app: vueApp } = createApp()
         const appHtml = await renderToString(vueApp)
