@@ -123,7 +123,7 @@ onMounted(() => {
 
       <div class="flex flex-row gap-2">
         <Mail aria-hidden="true" />
-        <p itemprop="email" aria-label="Email address">greenline@gmail.com</p>
+        <p itemprop="email" aria-label="Email address">greenlinefin@yahoo.com</p>
       </div>
 
       <div class="flex flex-row gap-2">
