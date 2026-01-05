@@ -10,8 +10,8 @@
       <Calculator />
     </section>
 
-    <section id="whyUs" class="bg-[url('/whyUs.png')] bg-cover bg-center">
-      <div class="max-sm:px-[20px] max-md:px-[64px] px-[120px] py-10 bg-gradient-to-r from-primary/50 to-primary/25 backdrop-blur-xs">
+    <section id="whyUs" class="bg-gray-100">
+      <div class="max-sm:px-[20px] max-md:px-[64px] px-[120px] py-10">
         <WhyUs />
       </div>
     </section>

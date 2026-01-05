@@ -143,7 +143,7 @@ onMounted(() => {
     itemtype="https://schema.org/FinancialProduct"
   >
     <header class="flex flex-col gap-2">
-      <h2 class="max-sm:text-2xl max-md:text-3xl text-4xl font-bold leading-tight" itemprop="name">
+      <h2 class="text-3xl lg:text-4xl font-bold leading-tight" itemprop="name">
         Apply for a loan
       </h2>
       <p itemprop="description">
@@ -154,7 +154,7 @@ onMounted(() => {
     <form
       action=""
       method="post"
-      class="max-sm:w-full w-1/2 flex flex-col gap-4"
+      class="w-full lg:w-1/2 flex flex-col gap-4"
       @submit.prevent="submitApplication"
       novalidate
     >

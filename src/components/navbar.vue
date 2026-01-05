@@ -55,7 +55,7 @@ onMounted(() => {
 <template>
   <!-- Desktop Navbar -->
   <nav
-    class="max-md:hidden fixed top-0 left-0 w-full bg-white text-primary shadow z-50 max-md:px-[64px] px-[120px]"
+    class="max-sm:hidden fixed top-0 left-0 w-full bg-white text-primary shadow z-50 px-[64px] lg:px-[120px]"
     aria-label="Primary navigation"
   >
     <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -73,10 +73,10 @@ onMounted(() => {
 
   <!-- Mobile Navbar -->
   <div
-    class="max-sm:px-[20px] max-md:px-[64px] md:hidden fixed top-0 left-0 w-full py-3 bg-white text-primary shadow z-50"
+    class="px-[20px] md:px-[64px] md:hidden fixed top-0 left-0 w-full py-3 bg-white text-primary shadow z-50"
   >
     <div class="w-full flex flex-row justify-between items-center">
-      <img src="/green.svg" class="w-[20%]" alt="Greenline Financials logo" aria-label="Greenline Microloans logo" />
+      <img src="/green.svg" class="w-[20%] md:w-[10%]" alt="Greenline Financials logo" aria-label="Greenline Microloans logo" />
 
       <!-- Hamburger -->
       <button
@@ -107,7 +107,7 @@ onMounted(() => {
       :animate="{ opacity: 1, y: 0 }"
       :exit="{ opacity: 0, y: -30 }"
       :transition="{ duration: 0.4, ease: 'easeInOut' }"
-      class="md:hidden w-full bg-white text-primary p-6 flex flex-col items-center gap-6 z-40"
+      class="lg:hidden w-full bg-white text-primary p-6 flex flex-col items-center gap-6 z-40"
       aria-label="Mobile navigation"
     >
       <ul class="flex flex-col gap-12 text-lg font-medium">

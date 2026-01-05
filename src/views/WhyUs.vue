@@ -80,61 +80,67 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="min-h-[100vh] flex flex-col gap-16 text-white">
-    <h2 class="max-sm:text-2xl max-md:text-3xl text-4xl font-bold leading-tight">
+  <section class="flex flex-col gap-16 text-primary">
+    <h2 class="text-3xl lg:text-4xl font-bold leading-tight">
       Why apply with us?
     </h2>
 
-    <div class="flex flex-col w-full gap-20">
+    <div class="grid grid-rows-3 lg:grid-cols-3 md:grid-rows-1 w-full gap-5">
 
       <!-- TRUST -->
-      <div ref="trust" class="flex flex-col gap-1">
+      <div ref="trust" class="flex flex-col gap-3 shadow-xl p-4 border border-primary rounded-lg bg-white">
         <Motion
           :initial="{ opacity: 0, y: 40 }"
           :animate="trustVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }"
           :transition="{ duration: 0.7, ease: 'easeOut' }"
           :reducedMotion="false"
         >
-          <Handshake :size="44" aria-hidden="true" />
+          <Handshake :size="32" aria-hidden="true" class="text-accent" />
         </Motion>
-        <h3 class="max-sm:text-xl text-2xl font-bold">Trusted by the community</h3>
-        <p class="text-lg">
-          We keep things honest and transparent. Clients choose us because they know we’re here
-          to make borrowing simple and stress-free.
-        </p>
+        <div>
+          <h3 class="max-sm:text-xl text-2xl font-bold">Trusted by the community</h3>
+          <p class="text-lg">
+            We keep things honest and transparent. Clients choose us because they know we’re here
+            to make borrowing simple and stress-free.
+          </p>
+        </div>
       </div>
 
       <!-- SPEED -->
-      <div ref="speed" class="flex flex-col gap-1">
+      <div ref="speed" class="flex flex-col gap-3 shadow-xl p-4 border border-primary rounded-lg bg-white">
         <Motion
           :initial="{ opacity: 0, y: 40 }"
           :animate="speedVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }"
           :transition="{ duration: 0.7, ease: 'easeOut' }"
           :reducedMotion="false"
         >
-          <Clock :size="44" aria-hidden="true" />
+          <Clock :size="32" aria-hidden="true" class="text-accent"/>
         </Motion>
-        <h3 class="max-sm:text-xl text-2xl font-bold">Fast and simple process</h3>
-        <p class="text-lg">
-          No long waits. No confusing steps. We review your application quickly so you can move
-          forward sooner.
-        </p>
+        <div>
+          <h3 class="max-sm:text-xl text-2xl font-bold">Fast and simple process</h3>
+          <p class="text-lg">
+            No long waits. No confusing steps. We review your application quickly so you can move
+            forward sooner.
+          </p>
+        </div>
       </div>
 
       <!-- RATES -->
-      <div ref="rates" class="flex flex-col gap-1">
+      <div ref="rates" class="flex flex-col gap-3 shadow-xl p-4 border border-primary rounded-lg bg-white">
         <Motion
           :initial="{ opacity: 0, y: 40 }"
           :animate="rateVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }"
           :transition="{ duration: 0.7, ease: 'easeOut' }"
           :reducedMotion="false"
         >
-          <Coins :size="44" aria-hidden="true" />
+          <Coins :size="32" aria-hidden="true" class="text-accent"/>
         </Motion>
-        <h3 class="max-sm:text-xl text-2xl font-bold">Fair, low rates</h3>
-        <p class="text-lg">
-          Our rates are designed to support your financial journey — not burden it.
-        </p>
+        <div>
+          <h3 class="max-sm:text-xl text-2xl font-bold">Fair, low rates</h3>
+          <p class="text-lg">
+            Our rates are designed to support your financial journey — not burden it.
+          </p>
+        </div>
       </div>
 
     </div>

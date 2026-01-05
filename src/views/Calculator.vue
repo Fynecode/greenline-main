@@ -5,7 +5,9 @@ import { Motion } from '@oku-ui/motion'
 // State
 const loanAmount = ref(1000)
 const loanTerm = ref(3)
-const interestRate = 0.3 // 30% simple interest example
+const interestRate = 0.26
+
+// loanAmount * interrestRate / 1-(1+intersetRate)^-loanTerm
 
 // Computed monthly payment
 const monthlyPayment = computed(() => {
@@ -72,6 +74,7 @@ watch([loanAmount, loanTerm], () => {
       <p class="mt-2 text-lg text-gray-700 max-w-prose">
         Estimate your monthly repayment amount for loans up to
         <strong>N$5000</strong> with flexible terms between 1–6 months.
+        <span class="text-black">Note, your monthly installments might change after application is approved</span>
       </p>
     </header>
 

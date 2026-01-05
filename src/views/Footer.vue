@@ -80,56 +80,65 @@ onMounted(() => {
       </h2>
     </header>
 
-    <form 
-      @submit="handleSubmit"
-      class="max-sm:w-3/4 w-1/3 flex flex-col gap-3"
-      aria-label="Contact form"
-      novalidate
-    >
-      <input
-        type="email"
-        v-model="contactForm.email"
-        placeholder="example@gmail.com"
-        class="p-2 w-full border border-primary/30 rounded"
-        required
-        aria-required="true"
-        @invalid="e => e.target.setCustomValidity('Please enter a valid email address.')"
-        @input="e => e.target.setCustomValidity('')"
-      />
-
-      <textarea
-        v-model="contactForm.body"
-        placeholder="body..."
-        class="p-2 border border-primary/30 w-full rounded"
-        required
-        aria-required="true"
-        @invalid="e => e.target.setCustomValidity('Please enter a message.')"
-        @input="e => e.target.setCustomValidity('')"
-      ></textarea>
-
-      <button
-        type="submit"
-        class="flex flex-row justify-center items-center gap-1 bg-primary text-white p-2 w-1/2 rounded cursor-pointer hover:bg-primary/80"
+    <div class="flex flex-col justify-between gap-5 w-full">
+      <form 
+        @submit="handleSubmit"
+        class="w-3/4 lg:w-1/3 flex flex-col gap-3"
+        aria-label="Contact form"
+        novalidate
       >
-        <Loader2 :size="20" :class="loading? 'animate-spin block':'hidden'" /> Send
-      </button>
-    </form>
+        <input
+          type="email"
+          v-model="contactForm.email"
+          placeholder="example@gmail.com"
+          class="p-2 w-full border border-primary/30 rounded"
+          required
+          aria-required="true"
+          @invalid="e => e.target.setCustomValidity('Please enter a valid email address.')"
+          @input="e => e.target.setCustomValidity('')"
+        />
 
-    <div class="mt-5 flex flex-col gap-8">
-      <div class="flex flex-row gap-2">
-        <MapPin aria-hidden="true" />
-        <p itemprop="address" aria-label="Physical address">15th Road 1393 Tsumeb</p>
-      </div>
+        <textarea
+          v-model="contactForm.body"
+          placeholder="body..."
+          class="p-2 border border-primary/30 w-full rounded"
+          required
+          aria-required="true"
+          @invalid="e => e.target.setCustomValidity('Please enter a message.')"
+          @input="e => e.target.setCustomValidity('')"
+        ></textarea>
 
-      <div class="flex flex-row gap-2">
-        <Mail aria-hidden="true" />
-        <p itemprop="email" aria-label="Email address">greenlinefin@yahoo.com</p>
-      </div>
+        <button
+          type="submit"
+          class="flex flex-row justify-center items-center gap-1 bg-primary text-white p-2 w-1/2 rounded cursor-pointer hover:bg-primary/80"
+        >
+          <Loader2 :size="20" :class="loading? 'animate-spin block':'hidden'" /> Send
+        </button>
+      </form>
 
-      <div class="flex flex-row gap-2">
-        <Phone aria-hidden="true" />
-        <p itemprop="telephone" aria-label="Telephone number">+264 81 866 9984</p>
+      <div class="flex lg:flex-row flex-col-reverse md:justify-between gap-5 border border-x-0 border-b-0 border-primary pt-5">
+        <div>
+          <p class="text-sm">&copy; Greenline Financial CC</p>
+        </div>
+        <div class="flex md:flex-row flex-col gap-4">
+          <div class="flex flex-row gap-2 md:justify-center items-center">
+            <MapPin aria-hidden="true" size="15" />
+            <p itemprop="address" aria-label="Physical address" class="text-sm">15th Road 1393 Tsumeb</p>
+          </div>
+
+          <div class="flex flex-row gap-2 md:justify-center items-center">
+            <Mail aria-hidden="true" size="15" />
+            <p itemprop="email" aria-label="Email address" class="text-sm">greenlinefin@yahoo.com</p>
+          </div>
+
+          <div class="flex flex-row gap-2 md:justify-center items-center">
+            <Phone aria-hidden="true" size="15" />
+            <p itemprop="telephone" aria-label="Telephone number" class="text-sm">+264 81 866 9984</p>
+          </div>
+        </div>
       </div>
+      
     </div>
+    
   </section>
 </template>
